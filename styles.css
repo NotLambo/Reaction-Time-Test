@@ -1,0 +1,185 @@
+/* Default */
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@100&display=swap');
+.hidden {
+    display: none;
+}
+:root {
+    background-color: #404258; /* #474E68 - #50577A - #6B728E */
+}
+h1, h2, h3 {
+    color: white;
+    font-weight: 100;
+    font-family: 'Ysabeau SC', sans-serif;
+    text-align: center;
+}
+h2:hover{
+    color: greenyellow;
+    cursor: pointer;
+    transform: translateY(2px);
+}
+hr {
+    width: 800px;
+    margin-bottom: 1rem;
+}
+.go-box, .won-window, .loss-window {
+    display: flex;
+    justify-content: center;
+}
+.green-go {
+    animation: move 2s infinite linear;
+    width: 400px;
+    height: 400px;
+    background-color: greenyellow;
+    border-radius: 10px;
+}
+.green-go:hover, .green-box:hover, .retry, .menu {
+    cursor: pointer;
+}
+@keyframes move {
+    0% {
+        transform: rotate(2deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+    75% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(2deg);
+    }
+}
+.box {
+    display: flex;
+    justify-content: center;
+}
+.red-box {
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    animation: move 2s infinite linear;
+}
+.green-box {
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    background-color: greenyellow;
+    animation: move 2s infinite linear;
+}
+.desc {
+    color: white;
+    font-weight: 100;
+    font-family: 'Ysabeau SC', sans-serif;
+    text-align: center;
+}
+
+.quit-text:hover {
+    animation: rgb 1s infinite;
+}
+@keyframes rgb {
+    0% {
+        color: orange;
+    }
+    25% {
+        color: red;
+    }
+    50% {
+        color: yellow;
+    }
+    75% {
+        color: aqua;
+    }
+    100% {
+        color: pink;
+    }
+}
+.won, .loss {
+    border-radius: 10px;
+    background-color: #474E68;
+    width: 800px;
+    height: fit-content;
+}
+.won-hr, .loss-hr {
+    width: 600px;
+}
+.retry, .menu {
+    background-color: #6B728E;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    hr {
+        width: 600px;
+        margin-bottom: 1rem;
+    }
+    .won, .loss {
+        border-radius: 10px;
+        background-color: #474E68;
+        width: 800px;
+        height: fit-content;
+    }
+    .won-hr, .loss-hr {
+        width: 600px;
+    }
+}
+/* Tablet / Ipad */
+@media (min-width: 481px) and (max-width: 768px) {
+    hr {
+        width: 600px;
+        margin-bottom: 1rem;
+    }
+    .won, .loss {
+        border-radius: 10px;
+        background-color: #474E68;
+        width: 700px;
+        height: fit-content;
+    }
+    .won-hr, .loss-hr {
+        width: 600px;
+    }
+}
+/* Mobile */
+@media (min-width: 300px) and (max-width: 480px) {
+    hr {
+        width: 400px;
+        margin-bottom: 1rem;
+    }
+    .green-go {
+        animation: move 2s infinite linear;
+        width: 400px;
+        height: 400px;
+        background-color: greenyellow;
+        border-radius: 10px;
+    }
+    .won, .loss {
+        border-radius: 10px;
+        background-color: #474E68;
+        width: 400px;
+        height: fit-content;
+    }
+    .won-hr, .loss-hr {
+        width: 200px;
+    }
+}
+/*
+
+
+  ______ _____ _______ _     _ _     _ ______    _______  _____  _______    / __   _  _____  _______        _______ _______ ______   _____ 
+ |  ____   |      |    |_____| |     | |_____]   |       |     | |  |  |   /  | \  | |     |    |    |      |_____| |  |  | |_____] |     |
+ |_____| __|__    |    |     | |_____| |_____] . |_____  |_____| |  |  |  /   |  \_| |_____|    |    |_____ |     | |  |  | |_____] |_____|
+                                                                         /                                                                 
+
+
+*/

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>React Rush | Github.com/NotLambo</title>
+        <meta name="description" content="Github.com/NotLambo">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="index.js" async defer></script>
+    </head>
+    <body>
+        <div>
+
+            <h1 class="welcome-text">Reaction Time Test.</h1>
+            <hr class="hr">
+
+            <div class="go-box">
+                <div class="green-go"></div>
+            </div>
+            <h2 class="start-text">Click To Start.</h2>
+
+            <div class="start hidden">
+                <h1 class="start-text">Start.</h1>
+                <hr>
+                <div class="box">
+                    <div class="red-box hidden"></div>
+                    <div class="green-box hidden"></div>
+                </div>
+                <p class="desc">When this box turns green, click it. It's that simple! Make sure you do it fast otherwise you loose.</p>
+                <p class="desc quit-text">Press 'ESC' too quit!</p>
+            </div>
+        
+            <div class="won-window">
+                <div class="won hidden">
+                    <h1 class="won-text">🎉🎉🎉 You Won 🎉🎉🎉</h1>
+                    <hr class="won-hr">
+                    <p class="desc">You got the box in time! Press the button below too play again.</p>
+                    <div class="button">
+                        <button class="retry">Play Again.</button>
+                        <button class="menu">Menu.</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loss-window">
+                <div class="loss hidden">
+                    <h1 class="loss-text">😭😭😭 You lost 😭😭😭</h1>
+                    <hr class="loss-hr">
+                    <p class="desc">You didn't react fast enough. Press the button below too play again!</p>
+                    <div class="button">
+                        <button class="retry">Play Again.</button>
+                        <button class="menu">Menu.</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+<!--
+
+
+  ______ _____ _______ _     _ _     _ ______    _______  _____  _______    / __   _  _____  _______        _______ _______ ______   _____ 
+ |  ____   |      |    |_____| |     | |_____]   |       |     | |  |  |   /  | \  | |     |    |    |      |_____| |  |  | |_____] |     |
+ |_____| __|__    |    |     | |_____| |_____] . |_____  |_____| |  |  |  /   |  \_| |_____|    |    |_____ |     | |  |  | |_____] |_____|
+                                                                         /                                                                 
+
+
+-->
