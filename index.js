@@ -14,8 +14,7 @@ const greenBox = document.querySelector('.green-box');
 const wonWindow = document.querySelector('.won-window');
 const won = document.querySelector('.won');
 
-const retryButton = document.querySelector('.retry');
-const menuButton = document.querySelector('.menu');
+const retryButton = document.querySelectorAll('.retry');
 
 const lossWindow = document.querySelector('.loss-window');
 const loss = document.querySelector('.loss');
@@ -43,6 +42,7 @@ function openLandingPage() {
 function openGameUI() {
     startDiv.classList.remove('hidden');
     redBox.classList.remove('hidden');
+    greenBox.classList.add('hidden');
 }
 
 function closeGameUI() {
@@ -56,6 +56,13 @@ function closeWinLossPage() {
     won.classList.add('hidden');
 }
 
+function closeAll() {
+    closeGameUI();
+    closeLandingPage();
+    closeWinLossPage();
+}
+
+// Random Delay So User Cannot Keep Guessing The Timer
 const randomTime = Math.floor(Math.random() * 3) + 1;
 let delay;
 
@@ -81,14 +88,28 @@ function colorChange() {
 }
 
 function buttons() {
-    menuButton.addEventListener('click', function() {
-        openLandingPage();
-    })
-    retryButton.addEventListener('click', function() {
-        closeWinLossPage();
-        openGameUI();
-        colorChange();
-    })
+    Array.from(retryButton);
+    for(const i of retryButton) {
+        i.addEventListener('click', function() {
+            closeAll();
+            openLandingPage();
+            cancelLoss();
+        })
+    }
+}
+
+let timeoutID;
+
+function automaticLoss() {
+    timeoutID = setTimeout(() => {
+        closeGameUI();
+        loss.classList.remove('hidden');
+        buttons();
+    }, 5000)
+}
+
+function cancelLoss() {
+    clearTimeout(timeoutID)
 }
 
 // Misc Events
@@ -97,6 +118,7 @@ box.addEventListener('click', function() {
     closeLandingPage();
     openGameUI();
     colorChange();
+    automaticLoss();
 })
 
 // Game
@@ -108,6 +130,7 @@ redBox.addEventListener('click', function() {
 })
 
 greenBox.addEventListener('click', function game() {
+    cancelLoss();
     closeGameUI();
     setTimeout(() => {
         won.classList.remove('hidden');
