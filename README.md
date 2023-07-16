@@ -12,3 +12,6 @@ Update 1;
 + Removed Menu Button
 
 - Added Functionality For Timed Loss
+
+Update 2;
+- Added Functionality For Manual User Restart
