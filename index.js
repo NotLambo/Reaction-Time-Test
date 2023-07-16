@@ -137,6 +137,16 @@ greenBox.addEventListener('click', function game() {
         buttons();
     }, 100)
 })
+
+// Functionality For Manual User Restart
+document.querySelector('body').addEventListener('keydown', function(e) {
+    if(e.key === 'Escape') {
+        closeAll();
+        openLandingPage();
+        cancelLoss();
+    }
+})
+
 /*
 
 
